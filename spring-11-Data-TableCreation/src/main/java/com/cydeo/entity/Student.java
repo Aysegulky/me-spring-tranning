@@ -7,8 +7,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
-@Entity
-@Table(name = "students")
+@Entity //sınıfın veritabanında kalıcı olarak saklanması gerektiğini işaretler.
+@Table(name = "students")//Table annotation'ı ile "Student" sınıfının "student" adlı bir veritabanı tablosuna karşılık geldiği belirtilmiştir.
 public class Student {
 
     @Id
@@ -31,6 +31,10 @@ public class Student {
     @Enumerated(EnumType.STRING)
 //    @Enumerated(EnumType.ORDINAL)
     private Gender gender;
+
+
+    @Transient
+    private String city;
 
 
 }
