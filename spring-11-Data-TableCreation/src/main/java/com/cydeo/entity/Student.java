@@ -1,5 +1,7 @@
 package com.cydeo.entity;
 
+import com.cydeo.enums.Gender;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -19,10 +21,16 @@ public class Student {
     private String lastName;
     private String email;
 
-    @Column(columnDefinition = "DATE")
+    @Column(columnDefinition = "DATE")//JPA'ya "birtDate" alaninin  "DATE2 sutunu ile eslemesini soyler
     private LocalDate birthDate;
     @Column(columnDefinition = "TIME")
     private LocalTime birthTime;
     @Column(columnDefinition = "TIMESTAMP")
     private LocalDateTime birthDateTime;
+
+    @Enumerated(EnumType.STRING)
+//    @Enumerated(EnumType.ORDINAL)
+    private Gender gender;
+
+
 }
