@@ -23,7 +23,10 @@ public class PaymentDetail {
     @Column(columnDefinition = "DATE")
     private LocalDate payoutDate;
 
-
+    @OneToOne(mappedBy = "paymentDetail",cascade=CascadeType.ALL)//paymentDetail in payment ile one to one iliskisi olur.Burada payments tablosunda payment_detail_id gorunur. mappedBy = "paymentDetail" ekledigimizde paymentDetail tablosunda payment foreing key gorunmez.
+    // Payment PARENT iken PaymentDEtail CHILD dir
+    //@JoinColumn(name = "payment_id")
+    private Payment payment;
 
     public PaymentDetail(BigDecimal merchantPayoutAmount, BigDecimal commissionAmount, LocalDate payoutDate) {
         this.merchantPayoutAmount = merchantPayoutAmount;
