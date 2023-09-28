@@ -21,7 +21,7 @@ public class Student {
     private String lastName;
     private String email;
 
-    @Column(columnDefinition = "DATE")//JPA'ya "birtDate" alaninin  "DATE2 sutunu ile eslemesini soyler
+    @Column(columnDefinition = "DATE")//JPA'ya "birtDate" alaninin  "DATE" sutunu ile eslemesini soyler.Stun basliginin ne oldugunun animlanmasi ile ilgili
     private LocalDate birthDate;
     @Column(columnDefinition = "TIME")
     private LocalTime birthTime;

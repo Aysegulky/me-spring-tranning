@@ -29,13 +29,13 @@ public class DataGenerator implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) throws Exception { //program ilk calistigi anda bana bunlari ver!
 
         Car c1 = new Car("BMW","M3");
         Car c2 = new Car("Honda","Civic");
         Car c3 = new Car("Toyota","Corolla");
 
-        carRepository.save(c1);
+        carRepository.save(c1);//JpaRepository<Car,Long> buradan gelen hazir metotlar sayesinde save metodunu cagirabildik
         carRepository.save(c2);
         carRepository.save(c3);
 
