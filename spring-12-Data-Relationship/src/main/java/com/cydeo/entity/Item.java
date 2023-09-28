@@ -19,10 +19,7 @@ public class Item {
     private String code;
 
     @ManyToMany(mappedBy = "itemList")
-    @JoinTable(name = "cart_item_rel",
-    joinColumns = @JoinColumn(name = "c_id"),
-    inverseJoinColumns = @JoinColumn(name = "i_id"))
-    private List<Cart> carts;
+      private List<Cart> carts;
 
     public Item(String name, String code) {
         this.name = name;
