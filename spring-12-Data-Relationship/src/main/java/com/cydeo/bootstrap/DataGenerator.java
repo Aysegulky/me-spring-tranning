@@ -70,9 +70,9 @@ public class DataGenerator implements CommandLineRunner {
 
         //merchantRepository.save(merchant1);//BURADAN KALDIRIP YUKARI ALINCA ERROR KALKTI
 
-        System.out.println(paymentRepository.findById(2L).get().getPaymentDetail().getCommissionAmount());
+       // System.out.println(paymentRepository.findById(2L).get().getPaymentDetail().getCommissionAmount());
 
-        paymentRepository.delete(payment1);
+        //paymentRepository.delete(payment1);
 
 
 
