@@ -29,8 +29,8 @@ public class Movie extends BaseEntity{
 
     @ManyToMany
     @JoinTable(name = "movie_genre_rel",
-            joinColumns = @JoinColumn(name = "movie_id"),
-            inverseJoinColumns = @JoinColumn(name = "genre_id"))
+            joinColumns = @JoinColumn(name = "movie_id"),//// Ana entity'nin sütunu
+            inverseJoinColumns = @JoinColumn(name = "genre_id"))// İlişkili entity'nin sütunu
     private List<Genre> genreList;
 
 }
