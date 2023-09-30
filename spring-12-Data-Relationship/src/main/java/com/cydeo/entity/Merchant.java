@@ -25,7 +25,7 @@ public class Merchant {
     private Integer payoutDelayCount;
 
     @OneToMany(mappedBy = "merchant") //in OneToMany relationship, ownership belongs to many side
-    private List<Payment> paymentList;//NEDEN LIST YAPTIK?
+    private List<Payment> paymentList;//
 
     public Merchant(String name, String code, BigDecimal transactionFee, BigDecimal commissionRate, Integer payoutDelayCount) {
         this.name = name;
