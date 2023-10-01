@@ -23,4 +23,16 @@ public class Ticket extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     private User userAccount;
 
+    private Integer type;
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "seatNumber=" + seatNumber +
+                ", rowNumber=" + rowNumber +
+                ", dateTime=" + dateTime +
+                '}';
+    }
+
+
 }
