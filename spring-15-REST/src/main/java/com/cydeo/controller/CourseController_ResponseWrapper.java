@@ -11,11 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/courses/api/v3")
-public class CourseController_ResponseWrapper {
+public class CourseController_ResponseWrapper { //***P4***
 
     private final CourseService courseService;
 
     public CourseController_ResponseWrapper(CourseService courseService) {
+
         this.courseService = courseService;
     }
 
@@ -25,12 +26,12 @@ public class CourseController_ResponseWrapper {
         return ResponseEntity
                 .status(HttpStatus.ACCEPTED)
                 .header("Version","Cydeo.V3")
-                .body(new ResponseWrapper("courses successfully retrieved",courseService.getCourses()));
+                .body(new ResponseWrapper("courses successfully retrieved",courseService.getCourses())); ////postman ==> GET-> localhost:8080/course/api/v3
     }
 
     @GetMapping("{id}")
     public ResponseEntity<ResponseWrapper> getCourseById(@PathVariable("id") long courseId){
-        return ResponseEntity.ok(new ResponseWrapper("course:" + courseId + "retrieved",courseService.getCourseById(courseId)));
+        return ResponseEntity.ok(new ResponseWrapper("course:" + courseId + "retrieved",courseService.getCourseById(courseId)));//postman ==> GET-> localhost:8080/course/api/v3/2
 
     }
 }

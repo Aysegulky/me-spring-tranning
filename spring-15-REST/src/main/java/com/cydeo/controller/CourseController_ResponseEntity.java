@@ -8,41 +8,41 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/courses/api/v2")
-public class CourseController_ResponseEntity {
+@RestController//***1***
+@RequestMapping("/courses/api/v2")//***2*** //@RequestMapping("/courses") ==>error
+public class CourseController_ResponseEntity { //***P2***
 
-    private final CourseService courseService;
+    private final CourseService courseService;  //***3***
 
     public CourseController_ResponseEntity(CourseService courseService) {
         this.courseService = courseService;
     }
 
     @GetMapping
-    public ResponseEntity<List<CourseDTO>> getAllCourses(){
+    public ResponseEntity<List<CourseDTO>> getAllCourses(){ //***4***
         return ResponseEntity
                 .status(HttpStatus.ACCEPTED)
                 .header("Version","Cydeo.V2")
                 .header("Operation","Get List")
-                .body(courseService.getCourses());
+                .body(courseService.getCourses()); //postman ==> GET-> localhost:8080/course/api/v2 -->status:202
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<CourseDTO> getCourseById(@PathVariable("id") long courseId){
-        return ResponseEntity.ok(courseService.getCourseById(courseId));
+    public ResponseEntity<CourseDTO> getCourseById(@PathVariable("id") long courseId){ //***5***
+        return ResponseEntity.ok(courseService.getCourseById(courseId)); //GET-> localhost:8080/course/api/v2/1
     }
 
-    @GetMapping("category/{name}")
+    @GetMapping("category/{name}") //***6***
     public ResponseEntity<List<CourseDTO>> getCourseByCategory(@PathVariable("name") String category){
-        return ResponseEntity.ok(courseService.getCoursesByCategory(category));
+        return ResponseEntity.ok(courseService.getCoursesByCategory(category));//GET-> localhost:8080/course/api/v2/category/Spring
     }
 
-    @PostMapping
+    @PostMapping//***7***
     public ResponseEntity<CourseDTO> createCourse(@RequestBody CourseDTO course){
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .header("Operation","Create")
-                .body(courseService.createCourse(course));
+                .body(courseService.createCourse(course)); //POST-> localhost:8080/course/api/v2
 
     }
 

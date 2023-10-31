@@ -8,7 +8,7 @@ import org.springframework.http.HttpStatus;
 @Getter
 @Setter
 @NoArgsConstructor
-public class ResponseWrapper {
+public class ResponseWrapper {  //***P3***
 
     private boolean success;
     private String message;
