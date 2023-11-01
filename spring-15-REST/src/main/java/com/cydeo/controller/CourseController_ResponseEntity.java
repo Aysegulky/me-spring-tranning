@@ -49,7 +49,7 @@ public class CourseController_ResponseEntity { //***P2***
     @DeleteMapping("{id}")
     public ResponseEntity<Void> deleteCourseById(@PathVariable("id") Long courseId){
         courseService.deleteCourseById(courseId);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.noContent().build();//HTTP yanıtı olarak "204 No Content" (İçerik Yok) kodunu döndürür. Bu, silme işleminin başarılı olduğunu belirtir, ancak yanıtın bir içeriği bulunmaz.
     }
 
     @PutMapping("{id}")
