@@ -9,10 +9,10 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 //@JsonIgnoreProperties(value = {"address", "country"}, ignoreUnknown = true)
-@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonIgnoreProperties(ignoreUnknown = true) //tum bilinmeyen ozellikleri gozardi eder
 public class AccountDTO {
 
-    @JsonIgnore
+    @JsonIgnore // bu ozellik JSON ciktisina eklenmez
     private String name;
     private String address;
     private String country;
