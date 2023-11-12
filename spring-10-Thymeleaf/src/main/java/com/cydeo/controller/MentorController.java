@@ -8,16 +8,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MentorController {
 
 
-    @RequestMapping("/mentor/register") //locathost:8080/mentor/register
+    @RequestMapping("/register") //locathost:8080/mentor/register
     public String register() {
 
-        return "student/register";
+        return "mentor/mentor-register";
     }
 
     @RequestMapping("/mentor/drop") //locathost:8080/mentor/drop
     public String drop(){
 
-        return "student/register";
+        return "mentor/register";
 
     }
 
