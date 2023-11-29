@@ -5,14 +5,14 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.5</version>
+        <version>2.7.6</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.cydeo</groupId>
-    <artifactId>me</artifactId>
+    <artifactId>spring-20-REST-Security-Keycloak-OrganizationsApp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Spring-16-REST-Jackson</name>
-    <description>Spring-16-REST-Jackson</description>
+    <name>spring-20-REST-Security-Keycloak-OrganizationsApp</name>
+    <description>spring-20-REST-Security-Keycloak-OrganizationsApp</description>
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -26,10 +26,15 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.modelmapper</groupId>
-            <artifactId>modelmapper</artifactId>
-            <version>3.1.0</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.keycloak</groupId>
+            <artifactId>keycloak-spring-boot-starter</artifactId>
+            <version>18.0.0</version>
+        </dependency>
+
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
